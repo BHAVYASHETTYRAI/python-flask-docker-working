@@ -33,5 +33,18 @@ $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' m
 $ docker inspect -f '{{ .Config.Hostname }}' my-container
 6095273a4e9b
 ```
+To push our image to docker hub:
+login to docker hub
+bhavyashettyrai   passwd Ra..........3
 
+docker tag flask/app bhavyashettyrai/flask-app:v1.0  (here flask app is the image name i have given during image build)
 
+docker push bhavyashettyrai/flask-app:v1.0
+
+access denied....
+sudo docker login
+username and password enter
+docker push bhavyashettyrai/flask-app:v1.0 
+now go and check your docker hub...image is pushed.
+This image can pull anuone using below comand...
+docker pull bhavyashettyrai/flask-app:v1.0 
